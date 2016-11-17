@@ -7,7 +7,8 @@
         <title>Insert title here</title>    
     </head>    
         
-    <body>    
+    <body>  
+        <a href="#">"${content}"</a>  
         <c:out value="${str0121}"></c:out>    
     </body>    
 </html>    
