@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @Controller
 public class GeneralController {
 
+    //默认跳转
     @RequestMapping(value = "/index.html")
     public void index_jsp(Model model) {
         model.addAttribute("str0121", "Hellow world");
@@ -20,6 +21,7 @@ public class GeneralController {
 
     }
 
+    //返回json数据
     @ResponseBody
     @RequestMapping(value = "/index.json")
     public ModelAndView doJson(Model model) {
