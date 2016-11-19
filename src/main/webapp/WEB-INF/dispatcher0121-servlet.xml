@@ -17,18 +17,17 @@
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<context:component-scan base-package="com.*" />
+	<mvc:resources location="／js/**" mapping="/js/" />
 
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+	 <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix" value="/WEB-INF/views/" /> <property name="suffix" 
+		value=".jsp" /> </bean> --> 
 
 	<!--velocity configure -->
 	<bean id="velocityConfigurer"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
 		<!-- 設置模板防止位置 -->
-		<property name="resourceLoaderPath" value="WEB-INF/velocity/" />
+		<property name="resourceLoaderPath" value="WEB-INF/velocity" />
 		<property name="velocityProperties">
 			<props>
 				<prop key="directive.foreach.counter.name">loopCounter</prop>
@@ -43,7 +42,7 @@
 	<bean id="ViewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
 		<property name="cache" value="true" />
-		<property name="prefix" value="WEB-INF/velocity/" /><!-- 视图文件的前缀，即存放的路径 -->
+		<!-- <property name="prefix" value="/" />视图文件的前缀，即存放的路径 -->
 		<property name="suffix" value=".vm" /><!-- 视图文件的后缀名 -->
 		<property name="dateToolAttribute" value="date" /><!--日期函数名称 -->
 		<property name="numberToolAttribute" value="number" /><!--数字函数名称 -->
@@ -52,6 +51,5 @@
 		<property name="exposeRequestAttributes" value="true" /><!--是否开放request属性 -->
 		<property name="requestContextAttribute" value="rc" /><!--request属性引用名称 -->
 	</bean>
-
 
 </beans>    

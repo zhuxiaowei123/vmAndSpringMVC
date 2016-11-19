@@ -22,10 +22,11 @@ public class GeneralController {
     }
 
     @RequestMapping(value = "/home.html")
-    public void home_velocity(Model model) {
+    public String home_velocity(Model model) {
         model.addAttribute("str0121", "Hellow world");
         model.addAttribute("content", "this is the content of shu");
-        System.out.println("index1.jsp");
+        System.out.println("velocity.vm");
+        return "home";
 
     }
 
