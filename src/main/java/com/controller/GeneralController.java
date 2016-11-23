@@ -13,31 +13,42 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @Controller
 public class GeneralController {
 
-    @RequestMapping(value = "/index.html")
-    public void index_jsp(Model model) {
+    @RequestMapping(value = "/home.html")
+    public void home(Model model) {
         model.addAttribute("str0121", "Hellow world");
         model.addAttribute("content", "this is the content of shu");
-        System.out.println("index1.jsp");
+        System.out.println("volecity test");
 
     }
 
-    @RequestMapping(value = "/home.html")
+    @RequestMapping(value = "/index.html")
     public String home_velocity(Model model) {
         model.addAttribute("str0121", "Hellow world");
         model.addAttribute("content", "this is the content of shu");
-        System.out.println("velocity.vm");
-        return "home";
+        System.out.println("jsp test");
+        return "index";
+
+    }
+
+    @RequestMapping(value = "/index.jsp")
+    public String jsp(Model model) {
+        model.addAttribute("str0121", "Hellow world");
+        model.addAttribute("content", "this is the content of shu");
+        System.out.println("jsp2 test");
+        return "index";
 
     }
 
     @ResponseBody
-    @RequestMapping(value = "/index.json")
+    @RequestMapping(value = "/test.json")
     public ModelAndView doJson(Model model) {
-        model.addAttribute("str0121", "Hellow world");
-        System.out.println("json");
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("result", "success");
-        return new ModelAndView(new MappingJackson2JsonView(), map);
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("test1", "test1");
+        result.put("test2", "test2");
+
+        model.addAttribute("success", true);
+        model.addAttribute("result", result);
+        return new ModelAndView(new MappingJackson2JsonView(), null);
 
     }
 }

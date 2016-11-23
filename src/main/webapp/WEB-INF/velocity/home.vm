@@ -17,7 +17,6 @@
   <script src="https://as.alipayobjects.com/g/datavis/g-plugin-range/0.0.9/index.js"></script>
 </head>
 <body>
-   <div>velocity-react-9</div>
    <div id="react-content"></div>
 </body>
   <script src="/vm_study/js/common.js"></script>
